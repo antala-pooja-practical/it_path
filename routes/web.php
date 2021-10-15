@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+});  */
+
+
+//Product crud route
+Route::get('/','ProductController@index')->name('home');
+Route::get('/product/add','ProductController@add')->name('add');
+Route::post('/product/store','ProductController@store')->name('store');
+Route::get('/product/edit/{id}','ProductController@editView')->name('products.edit');
+Route::post('/product/update/{id}','ProductController@update')->name('products.update');
+Route::delete('/product/destory','ProductController@destroy')->name('products.destory');
+
+Route::post('product-sortable','ProductController@sortable');
+
